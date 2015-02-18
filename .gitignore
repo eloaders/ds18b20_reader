@@ -1,0 +1,5 @@
+.*~
+*.o
+*.swp
+*.swo
+ds18b20_reader

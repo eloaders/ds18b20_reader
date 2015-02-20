@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "options.h"
+#include "ds18b20.h"
 
-#define VERSION "0.1.0"
+#define VERSION "0.2.0"
 
 void help()
 {
@@ -54,11 +55,20 @@ void error(int error)
 
 void run(const char *device, unsigned interval)
 {
-   if (device != device) return;
+   if (!ds18b20_is_present(device))
+   {
+      fprintf(stderr, "ERROR: Found no sensor with ID '%s'\n", device);
+      exit(EXIT_FAILURE);
+   }
 
    while(true)
    {
-      printf("read data\n");
+      int temperature = 0;
+      int result = ds18b20_read(device, &temperature);
+      double temp = temperature / 1000.0;
+
+      if (DS18B20_OK == result) printf("%6.2f°C\n", temp);
+
       sleep(interval);
    }
 }

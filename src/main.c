@@ -57,7 +57,7 @@ void run(const char *device, unsigned interval)
 {
    if (!ds18b20_is_present(device))
    {
-      fprintf(stderr, "ERROR: Found no sensor with ID '%s'\n", device);
+      fprintf(stderr, "ERROR: No sensor with ID '%s' found\n", device);
       exit(EXIT_FAILURE);
    }
 

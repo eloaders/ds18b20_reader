@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/time.h>
+#include <time.h>
 #include "options.h"
 #include "ds18b20.h"
 
@@ -67,7 +69,17 @@ void run(const char *device, unsigned interval)
       int result = ds18b20_read(device, &temperature);
       double temp = temperature / 1000.0;
 
-      if (DS18B20_OK == result) printf("%6.2f°C\n", temp);
+      struct timeval t;
+      gettimeofday(&t, NULL);
+      struct tm* tm_info = gmtime(&t.tv_sec);
+
+      char buf[25];
+      strftime(buf, sizeof(buf), "%Y-%m-%dT%H:%M:%S", tm_info);
+      if (DS18B20_OK == result)
+      {
+         printf("%s.%06ld %7.3f°C\n", buf, t.tv_usec, temp);
+         fflush(stdout);
+      }
 
       sleep(interval);
    }

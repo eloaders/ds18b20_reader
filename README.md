@@ -4,7 +4,8 @@
 
 DS18B20_Reader is a temperature logger using Linux's representation of a
 DS18B20 temperature sensor in sysfs. It can be used on any Linux system with
-such a sensor, but is primarily developed for Raspberry Pis.
+such a sensor, but is primarily developed for Raspberry Pis (any model will
+do).
 
 ## Requirements
 
@@ -33,7 +34,7 @@ switch:
    `> ./ds18b20_reader -d 0000053da58f`
 
 The program should immediately start to print the current temperature every
-5 seconds. The output should look similar to this:
+5 seconds. The output looks similar to this:
 
    `2015-02-24T09:16:08.704495  18.750°C`  
    `2015-02-24T09:16:13.534466  18.687°C`  
@@ -48,17 +49,17 @@ Use the *-i* switch to adjust the number of seconds between two measurements:
 
 The previous command prints one line every minute.
 
-## How to store the output to a file?
+## How to store output in a file?
 
-To store output to a file, say *temp.log*, you start the program like this:
+To write the output to a file, say *temp.log*, start the program like this:
 
    `> ./ds18b20_reader -d 0000053ds58f -i 60 | tee -a temp.log`
 
 # Questions, suggestions and bugs
 
-Should you have questions about the program, suggestions for further
-improvements or would like to report a bug, please don't hesitate to send
-an [email](mailto:jens@gutzeit.name).
+Should you have questions about the program or suggestions for further
+improvements, please don't hesitate to send an
+[email](mailto:jens@gutzeit.name). Bug reports are always welcome.
 
 # License
 

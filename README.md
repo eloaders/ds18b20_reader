@@ -1,4 +1,4 @@
-# DS18B20_READER
+# DS18B20_Reader
 
 DS18B20_Reader is a temperature logger using Linux's representation of a
 DS18B20 temperature sensor in sysfs. It can be used on any Linux system with
@@ -33,10 +33,10 @@ switch:
 The program should immediately start to print the current temperature every
 5 seconds. The output should look similar to this:
 
-   2015-02-24T09:16:08.704495  18.750°C
-   2015-02-24T09:16:13.534466  18.687°C
-   2015-02-24T09:16:18.364459  18.750°C
-   2015-02-24T09:16:23.194451  18.750°C
+   `2015-02-24T09:16:08.704495  18.750°C` 
+   `2015-02-24T09:16:13.534466  18.687°C`  
+   `2015-02-24T09:16:18.364459  18.750°C`  
+   `2015-02-24T09:16:23.194451  18.750°C`  
 
 The time is always shown as UTC! The output can be stopped by pressing CTRL-C.
 
@@ -55,8 +55,8 @@ To store output to a file, say *temp.log*, you start the program like this:
 # Questions, suggestions and bugs
 
 Should you have questions about the program, suggestions for further
-improvements or would like to report a bug, don't hesitate to send an email
-to [me](mailto:jens@gutzeit.name).
+improvements or would like to report a bug, please don't hesitate to send
+an [email](mailto:jens@gutzeit.name).
 
 # License
 

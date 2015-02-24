@@ -33,7 +33,7 @@ switch:
 The program should immediately start to print the current temperature every
 5 seconds. The output should look similar to this:
 
-   `2015-02-24T09:16:08.704495  18.750°C` 
+   `2015-02-24T09:16:08.704495  18.750°C`  
    `2015-02-24T09:16:13.534466  18.687°C`  
    `2015-02-24T09:16:18.364459  18.750°C`  
    `2015-02-24T09:16:23.194451  18.750°C`  

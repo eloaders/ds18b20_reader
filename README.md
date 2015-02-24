@@ -1,6 +1,6 @@
 # DS18B20_Reader
 
-[Build Status(https://travis-ci.org/jensgutzeit/ds18b20_reader.svg)](https://travis-ci.org/jensgutzeit/ds18b20_reader)
+[![Build Status](https://travis-ci.org/jensgutzeit/ds18b20_reader.svg)](https://travis-ci.org/jensgutzeit/ds18b20_reader)
 
 DS18B20_Reader is a temperature logger using Linux's representation of a
 DS18B20 temperature sensor in sysfs. It can be used on any Linux system with
